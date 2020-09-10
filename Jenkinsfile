@@ -10,7 +10,7 @@ stage('build')
 	sh """
 		multiline wokrs too	
 	   """
-	   la -lah
+	   ls -lah
 	   }
 	}
 	}
