@@ -16,4 +16,10 @@ stage('build')
 	}
 	}
 }
-
+stage('Upload to AWS')
+{
+	withAWS(credentials:'aws-static') {
+    // do something
+    s3Upload(file:'index.html', bucket:'s23jenkins', path:'index.html')
+}
+}
