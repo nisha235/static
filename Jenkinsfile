@@ -7,10 +7,11 @@ stage('build')
 	{
 	steps{
 	sh 'echo "hello world"'
-	sh """
-		multiline wokrs too	
-	   """
+	sh '''
+	echo "multiline wokrs too"
+	   
 	   ls -lah
+	   '''
 	   }
 	}
 	}
