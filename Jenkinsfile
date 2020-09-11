@@ -14,12 +14,16 @@ stage('build')
 	   '''
 	   }
 	}
-	}
-}
+	
+
 stage('Upload to AWS')
 {
-	withAWS(credentials:'aws-static') {
+	  steps {
+	withAWS(region:'us-west-2',credentials:'aws-static') {
     // do something
-    s3Upload(file:'index.html', bucket:'s23jenkins', path:'index.html')
+    s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'s23jenkins', path:'index.html')
+}
+}
+}
 }
 }
